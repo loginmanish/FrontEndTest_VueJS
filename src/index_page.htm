@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			h1 {
+			  font-family: serif, Arial;
+			}
+			
+			h2, h3, h4, h5, h6, li {
+			  font-family: Arial, sans-serif;
+			}
+
+			p, a {
+			  font-family: Arial, sans-serif;
+			}
+
+			/* Generic styles */
+			html {
+			  scroll-behavior: smooth;
+			}
+			ol, ul {
+				list-style: none;
+				padding: 0px;
+			}
+			*{
+				color: #a0a0a0;
+			}
+			a {
+			  background-color: white;
+			  text-decoration: none;
+			  color: #a0a0a0;
+			  text-align: center;
+			  display: inline-block;
+			  transition: all .3s;
+			  padding-top: 5px;
+			  padding-bottom: 5px;
+			}
+			
+			a.n-current{ 
+				color: green;
+				border-bottom: green 3px solid;
+			}
+
+			a:hover {
+			  opacity: .6;
+			}
+			.wrapper {
+				padding: 2px 4rem;
+			}
+			
+			.navigation {
+				display: grid;
+				grid-template-columns: 1fr 3fr;
+				grid-template-rows: 100px;
+				align-items: center;
+			}
+			
+			.navigation > h1 {
+			  font-size: 3rem;
+			  padding-bottom: 1rem;
+			}
+			
+			.navigation > ul {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+				align-items: center;
+			    font-size: 1rem;
+			    padding-bottom: 1rem;
+			}
+			
+			.board > ul {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				grid-gap: 2rem;
+				background-color: #FAFCFE;
+			}
+			
+			.board-cont{
+				background-color: #F4F4F4;
+				padding: 2px 1.5rem 5px 1.5rem;
+				min-height: 500px;
+				max-height: 900px;
+				overflow: auto;
+				border-radius: .3rem;
+			}
+			
+			.board-cont > h5 {
+				color: #A0A0A0;
+			}
+			
+			.board-cont > ul {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+				grid-gap: 1rem;
+			}
+			
+			.card {
+				background-color: #fff;
+				padding: 0.5rem 0rem;
+				min-height: 30px;
+				max-height: 325px;
+				overflow: auto;
+				border-radius: .6rem;
+				font-size: 10px;
+				display: grid;
+			}
+			.menu-dots{
+				display: flow-root;
+				padding: 0px 1rem 5px 1rem;
+			}
+			.card-menu {
+				float: right;
+				display: block;
+				font-weight: bold;
+			}
+			.card-order-detail{
+				padding: 5px 1rem 20px 1rem;
+			}
+			.order-img {
+				height: 60px;
+				width: 60px;
+				border: #F0F0F0 1px solid;
+				border-radius: 5px;
+				float: left;
+			}
+			.order-details > ul {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+				grid-template-rows: repeat(2, 24px);
+			}
+			
+			.order-img > img {
+				width: 60px;
+			}
+			
+			/*.order-details .timer, .order-details .info {
+				display: flex;
+				float: right;
+				padding: 5px 0px
+			}*/
+			
+			.order-details .new-order > span {
+				padding: 4px 15px;
+				background-color: #FFECD0;
+				border-radius: 15px;
+				font-weight: bold;
+				color: #875D3E;
+			}
+			.order-details .info .amt {
+				font-weight: bold;
+				color: #414141;
+			}
+			
+			.order-details {
+				display: grid;
+				float: right;
+				text-align: right;
+				padding: 2px;
+			}
+			.order-details .timer .timer-icon > img {
+				width: 10px;
+			}
+			.order-details .timer .timer-icon, .order-details .timer .timer-time, .order-details .info > div {
+				display: inline;
+			}
+			
+			
+			.order-user-chat > img {width: 30px;}
+			.order-user-thumbnail > img {width: 100%; height: 120%; object-fit: cover;}
+			.order-user-thumbnail{
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				border: 1px solid #F0F0F0;
+				border-radius: 50%;
+				overflow: hidden;
+			}
+			.view-order{
+				padding: 10px 1rem;
+				border-top: 1px solid #efefef;
+			}
+			.view-order-text, .view-order-images{
+				display: inline;
+			}
+			.view-order-images {float:right;}
+			.order-user-chat, order-user-thumbnail {
+				display: inline;
+			}
+			.view-order-text > div {height: 100%; v-align: middle;}
+		</style>
+	</head>
+	<body>
+		<main class="wrapper">
+			<section class="navigation">
+				<h1>fiverr</h1><!-- Logo Image should be placed here-->
+				<ul>
+					<li><a href="#Dashboard" >Dashboard</a></li>
+					<li><a href="#Messages" >Messages</a></li>
+					<li><a class="n-current" href="#Orders" >Orders</a></li>
+					<li><a href="#Gigs" >Gigs</a></li>
+					<li><a href="#Analytics" >Analytics</a></li>
+					<li><a href="#Earnings" >Earnings</a></li>
+				</ul>
+			</section>
+			<section class="main">
+				<div class="board">
+					<ul>
+						<li>
+							<div class="board-cont">
+								<h5>NEW ORDERS</h5>
+								<!-- Cards here -->
+								<ul>
+									<li>
+										<div class="card">
+											<!-- Card contents here -->
+											<div class="menu-dots">
+												<div class="card-menu"><a href="#submenu">...</a></div>
+											</div>
+											<div class="card-order-detail">
+												<div class="order-img"><img src="assets/products/F_Purse3_drop.jfif" /></div>
+												<div class="order-details">
+													<ul>
+														<li><div class="new-order"><span>New Order</span></div></li>
+														<li>
+															<div class="timer">
+																<div class="timer-icon"><img src="assets/icons/timer.png" /></div> 
+																<div class="timer-time">&nbsp;&nbsp;5 days left</div>
+															</div>
+														</li>
+														<li>
+															<div class="info">
+																<div class="info-hrs">20 hrs</div>
+																<div>&nbsp;&nbsp;|&nbsp;&nbsp;</div>
+																<div class="amt">$320</div>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<div class="view-order">
+												<div class="view-order-text"><span style="display: inline-table; vertical-align: middle; font-weight: bold; font-size: 12px; padding: 10px 0;"><div>View Order</div></span></div>
+												<div class="view-order-images">
+													<div class="order-user-chat"><img src="assets/icons/chat.png" /></div>
+													<div class="order-user-thumbnail"><img src="assets/users/usr1.png" /></div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="card">
+											<!-- Card contents here -->
+											<h4>New Order</h4>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div class="board-cont">
+								<h5>IN PROGRESS</h5>
+								<!-- Cards here -->
+							</div>
+						</li>
+						<li>
+							<div class="board-cont">
+								<h5>WAITING FOR BUYER</h5>
+								<!-- Cards here -->
+							</div>
+						</li>
+						<li>
+							<div class="board-cont">
+								<h5>COMPLETED</h5>
+								<!-- Cards here -->
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>
